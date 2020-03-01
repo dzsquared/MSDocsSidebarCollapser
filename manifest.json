@@ -1,26 +1,23 @@
  {
-    "name": "Microsoft Docs Fullview",
-    "version": "1.0",
-    "description": "Toggle to View Microsoft Docs in Full Width",
-    "permissions": ["activeTab","declarativeContent","storage"],
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "page_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "images/logoIcon16.png",
-        "32": "images/logoIcon32.png",
-        "48": "images/logoIcon48.png",
-        "128": "images/logoIcon128.png"
-      }
-    },
+    "name": "Docs Fullview",
+    "version": "2.0",
+    "description": "Toggle to View Documentation in Full Width",
+    "permissions": [
+        "tabs", "https://docs.microsoft.com/*"
+    ],
     "icons": {
       "16": "images/logoIcon16.png",
       "32": "images/logoIcon32.png",
       "48": "images/logoIcon48.png",
       "128": "images/logoIcon128.png"
     },
+    "content_scripts": [
+        {
+            "matches": ["https://docs.microsoft.com/*"],
+            "js": ["jquery.js", "fullWidth.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": ["buttonActions.js"],
     "manifest_version": 2
   }
