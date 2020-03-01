@@ -1,8 +1,3 @@
 https://code.jquery.com/jquery-3.3.1.min.js
 
-
-https://thenounproject.com/term/width/304721/
-width by Magicon from the Noun Project
-
-https://thenounproject.com/search/?q=right%20arrow&i=2069553
-right by atlantamountain from the Noun Project
+https://developer.chrome.com/extensions/content_scripts
