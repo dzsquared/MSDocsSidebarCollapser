@@ -3,7 +3,7 @@
     "version": "2.0",
     "description": "Toggle to View Documentation in Full Width",
     "permissions": [
-        "tabs", "https://docs.microsoft.com/*"
+        "activeTab"
     ],
     "icons": {
       "16": "icons/logoIcon16.png",

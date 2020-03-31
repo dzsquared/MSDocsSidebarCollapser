@@ -8,7 +8,8 @@ The button allows the left sidebar to be collapsed/expanded, creating more room 
 
 ## Installation
 ### Option 0: Install from the Chrome Web Store/Microsoft Edge Store
-Sorry!  This option is no longer available.  I am working to list it in the Microsoft Edge extension store.
+- Edge: https://microsoftedge.microsoft.com/addons/detail/hnjdejdpeeojbipggdjdpfdcononmbpn
+- Chrome: pending review
 
 ### Option 1: Load Unpacked (Chrome/Edge)
 0. This method requires enabling developer mode in *chrome://extensions* or *edge://extensions* on your workstation
