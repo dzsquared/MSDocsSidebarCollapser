@@ -1,4 +1,9 @@
 function setupDocs() {
+    // add jquery 
+    var jq = document.createElement('script');
+    jq.src = chrome.runtime.getURL('jquery.js');
+    (document.head || document.documentElement).appendChild(jq);
+
     // add a script element for the button actions JS
     var s = document.createElement('script');
     s.src = chrome.runtime.getURL('buttonActions.js');
