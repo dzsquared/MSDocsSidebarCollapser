@@ -1,6 +1,6 @@
  {
     "name": "Docs Fullview",
-    "version": "2.1",
+    "version": "2.1.1",
     "description": "Toggle to View Documentation in Full Width",
     "icons": {
       "16": "icons/logoIcon16.png",
