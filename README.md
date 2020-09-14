@@ -27,4 +27,12 @@ The button allows the left sidebar to be collapsed/expanded, creating more room 
 ![Collapse and Expand](/images/example.gif)
 
 
+## Contributors:
+Thanks to [@BrunoBlanes](https://github.com/BrunoBlanes) for adding jQuery to the extension after it was removed from MS Docs.
 
+## Release Notes
+### v2.2.1
+- Adds jQuery
+
+### v2.2
+- Adds a button to the page for expanding/collapsing
