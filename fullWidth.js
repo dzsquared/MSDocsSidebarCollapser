@@ -16,7 +16,7 @@ function setupDocs() {
     var pageMetadata = document.getElementsByClassName("page-metadata")[0];
     if (typeof pageMetadata !== 'undefined') {
         var sidebarButton = document.createElement("LI");
-        sidebarButton.innerHTML = "<button class='button is-small' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide'>Collapse Sidebar</button>"
+        sidebarButton.innerHTML = "<button class='button is-small' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide' style='margin-bottom: 0.5em;margin-top: 0.5em;'>Collapse Sidebar</button>"
         pageMetadata.insertBefore(sidebarButton, pageMetadata.childNodes[0]);
     }
 }
