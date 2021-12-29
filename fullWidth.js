@@ -16,18 +16,23 @@ function setupDocs() {
     var pageMetadata = document.getElementsByClassName("page-metadata")[0];
     if (typeof pageMetadata !== 'undefined') {
         var sidebarButton = document.createElement("LI");
-        sidebarButton.innerHTML = "<button class='button link-button' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide' style='margin-bottom: 0.5em;margin-top: 0.5em;'>Collapse Sidebar</button>"
+        sidebarButton.innerHTML = "<button class='button link-button font-size-sm' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide'><span aria-hidden='true' class='docon docon-arrow-left'></span> Collapse Sidebar</button>"
         pageMetadata.insertBefore(sidebarButton, pageMetadata.childNodes[0]);
     }
 
     // prepend a button to the sidebar
-    var sidebar = document.getElementsByClassName("left-container")[0];
+    var sidebar = document.getElementById("affixed-left-container");
     if (typeof sidebar !== 'undefined') {
         var sidebarButton = document.createElement("DIV");
-        // sidebarButton.setAttribute("class", "column left-container");
+        sidebarButton.setAttribute("class", "border-bottom flex-shrink-0");
         sidebarButton.setAttribute("id", "sidebarButtonHolder");
-        sidebarButton.innerHTML = "<button class='button is-small' id='docControllerSidebar' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide' style='margin-bottom: 0.5em;margin-top: 0.5em;'>Collapse Sidebar</button>"
-        sidebar.insertBefore(sidebarButton, sidebar.childNodes[0]);
+        sidebarButton.innerHTML = "<button class='button button-clear button-sm is-full-width display-block padding-left-none padding-right-none border-none is-text-left' id='docControllerSidebar' data-bi-name='sidebarController' onclick='sidebarAction(0)' currentSidebar='collapseSide'><span class='icon font-size-xs has-text-subtle'><span aria-hidden='true' class='docon docon-arrow-left'></span></span><span> Collapse Sidebar <span class='tag is-text is-small is-rounded margin-left-xxs'>Extension</span></span></button>"
+
+        $(window).on('load', function() {
+            sidebar.append(sidebarButton);
+        });
+
     }
 }
+
 setupDocs();
