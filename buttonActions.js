@@ -43,3 +43,43 @@ function sidebarAction(direction) {
         collapseSide();
     }
 }
+
+function breakHeaderFilename(contentdisposition) {
+    console.log(contentdisposition);
+    let filename = "";
+    if (contentdisposition) {
+        filename = contentdisposition.split("filename=")[1];
+    }
+    if (filename == "" || filename == null) {
+        filename = "Notebook.ipynb";
+    }
+    return filename;
+}
+
+
+function defaultNotebook(originUrl) {
+    // find the edit button and get the href
+    var editButton = document.getElementById("contenteditbtn");
+    var url = editButton.children[0].href;
+    let newBody = { originUrl: url };
+
+    // send post request and download response file
+    fetch('https://doc-notebook-generator.azurewebsites.net/api/MarkdownToNotebook?code=D9PKNudb8hB63ozsrBc4/mFyi5A/pvXjQ96dhulqxHusCXLw2aaGWw==', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newBody)
+        }).then(async response => ({
+            filename: breakHeaderFilename(response.headers.get('Content-Disposition')),
+            filetype: "application/vnd.jupyter",
+            fileblob: await response.blob()
+        })).then(fileobject => {
+            const newBlob = new Blob([fileobject.fileblob], { type: fileobject.filetype });
+            var url = window.URL.createObjectURL(newBlob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = fileobject.filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+}
