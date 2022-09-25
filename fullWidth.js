@@ -20,17 +20,17 @@ function setupDocs() {
         };
         (document.head || document.documentElement).appendChild(s);
 
-        // prepend a button to the page metadata area
-        var pageMetadata = document.getElementsByClassName("page-metadata")[0];
-        if (typeof pageMetadata !== 'undefined') {
-            var sidebarButton = document.createElement("LI");
-            sidebarButton.innerHTML = "<button class='button link-button font-size-sm' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide'><span aria-hidden='true' class='docon docon-arrow-left'></span> Collapse Sidebar</button>"
-            pageMetadata.insertBefore(sidebarButton, pageMetadata.childNodes[0]);
-        }
-
         // append a button to the sidebar
         var sidebar = document.getElementById("affixed-left-container");
-        if (typeof sidebar !== 'undefined') {
+        if (sidebar != null && typeof sidebar !== 'undefined') {
+            // prepend a button to the page metadata area
+            var pageMetadata = document.getElementsByClassName("page-metadata")[0];
+            if (typeof pageMetadata !== 'undefined') {
+                var sidebarButton = document.createElement("LI");
+                sidebarButton.innerHTML = "<button class='button link-button font-size-sm' id='docController' data-bi-name='sidebarController' onclick='sidebarButton()' currentSidebar='collapseSide'><span aria-hidden='true' class='docon docon-arrow-left'></span> Collapse Sidebar</button>"
+                pageMetadata.insertBefore(sidebarButton, pageMetadata.childNodes[0]);
+            }
+
             var sidebarButton = document.createElement("DIV");
             sidebarButton.setAttribute("class", "border-bottom flex-shrink-0");
             sidebarButton.setAttribute("id", "sidebarButtonHolder");
