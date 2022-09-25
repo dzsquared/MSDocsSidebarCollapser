@@ -1,9 +1,9 @@
 # Microsoft Docs Sidebar Collapser: Edge/Chrome Extension
 
-Edge/Chrome extension that enables the table of contents sidebar on https://docs.microsoft.com to be collapsed.
+Edge/Chrome extension that enables the table of contents sidebar on https://learn.microsoft.com to be collapsed.
 
 ## Functionality
-A button is automatically added to pages within https://docs.microsoft.com.
+A button is automatically added to pages within https://learn.microsoft.com.
 The button allows the left sidebar to be collapsed/expanded, creating more room to read the content.
 
 ## Installation
@@ -31,6 +31,10 @@ The button allows the left sidebar to be collapsed/expanded, creating more room 
 Thanks to [@BrunoBlanes](https://github.com/BrunoBlanes) for adding jQuery to the extension after it was removed from MS Docs.
 
 ## Release Notes
+### v2.3.0
+- Adds *learn.microsoft.com* to the supported URLs
+- Automatically expands the right table of contents ("show more") on load
+
 ### v2.2.1
 - Adds jQuery
 
