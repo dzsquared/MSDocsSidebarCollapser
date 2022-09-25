@@ -10,7 +10,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://docs.microsoft.com/*"],
+            "matches": ["https://docs.microsoft.com/*", "https://learn.microsoft.com/*"],
             "js": ["jquery.js", "fullWidth.js"],
             "run_at": "document_end"
         }
